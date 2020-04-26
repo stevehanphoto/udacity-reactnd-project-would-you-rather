@@ -4,7 +4,7 @@ This project was built for the Udacity React Nanodegree's Redux section of the c
 
 In this web app, the user plays the “Would You Rather?” game, where he is asked a question in the form: “Would you rather [option A] or [option B] ?”.
 
-In the current implementation, the User logs in by impersonating one of 4 characters, (i.e. they are actual people and are all personal friends of mine):
+In the current implementation, the User logs in by impersonating one of 4 characters, (i.e. all actual people and friends of mine):
 
 1. San San - *student majoring in early childhood development and lover of the outdoors*
 2. Scarlett Lash - *fashion and tattoo model*
