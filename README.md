@@ -1,23 +1,22 @@
 # Would You Rather Project
 
-This project is for the Udacity React Nanodegree's Redux section of the course.
+This project was built for the Udacity React Nanodegree's Redux section of the course.
 
 ## Instructions to run:
-
+```
 git clone https://github.com/stevehanphoto/udacity-reactnd-project-would-you-rather.git
-
+```
 cd in to udacity-reactnd-project-would-you-rather project folder
 
 run the commands:
-
+```
 npm install
-
 npm start
-
+```
 Go to http://localhost:3000 on your browser
 
 ## Project Folder Structure
-```bash
+```
 ├── CONTRIBUTING.md # Not modified.
 ├── README.md # This file.
 ├── SEARCH_TERMS.md # The whitelisted short collection of available search terms.
@@ -53,7 +52,6 @@ Go to http://localhost:3000 on your browser
     ├── utils
     │   ├── _DATA.js # A JavaScript API to communicate with Udacity backend.
     │   ├── api.js        
-
     ├── img # Images for the app.
     │   ├── SanSan.jpg # Image of San San, an early childhood development student
     │   ├── ScarlettLash.jpg # Image of Scarlett Lash, a well known tattoo andfashion model
@@ -61,10 +59,8 @@ Go to http://localhost:3000 on your browser
     │   └── CharlestonPierce.jpg # Image of Charleston Pierce, a model, actor, fashion show producer and model coach 
     ├── index.css # Global styles.
     └── index.js # Used for DOM rendering only.
-    
-## Contributing
+```
 
-This repository is orginally a fork of the starter code for _all_ Udacity students.
 
 
 
