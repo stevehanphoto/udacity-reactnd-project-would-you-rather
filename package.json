@@ -1,5 +1,5 @@
 {
-  "homepage": "https://stevehanphoto.github.io/would-you-rather-deploy",
+  "homepage": "https://udacity-would-you-rather-stevehan.netlify.app/",
   "name": "would-you-rather-deploy",
   "version": "0.1.0",
   "private": true,
@@ -43,8 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^2.2.0"
   }
 }

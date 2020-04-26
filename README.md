@@ -1,16 +1,37 @@
 # Would You Rather Project
 
-This project was built for the Udacity React Nanodegree's Redux section of the course.
+This project was built for the Udacity React Nanodegree's Redux section of the course.  The main goal of this project is to make use of Redux in state management.
+
+In this web app, the user plays the “Would You Rather?” game, where he is asked a question in the form: “Would you rather [option A] or [option B] ?”.
+
+In the current implementation, the User logs in by impersonating one of 4 characters, (i.e. they are actual people and are all personal friends of mine):
+
+1. San San - *student majoring in early childhood development and lover of the outdoors*
+2. Scarlett Lash - *fashion and tattoo model*
+3. Missy M - *collectible toys artist and mural painter/artist*
+4. Charleston Pierce - *actor, model, coach, book author, and fashion show producer*
+
+Once the user logs in, he may select a poll to view.  If the user has not answered the question yet, he is prompted for his answer.  Once the question has been answered, he is shown the results of the poll.
+
+The user can also add new questions as the logged in character.
+
+A leaderboard list the characters with highest to lowest scores (i.e. scores are calculated by adding the number of "Answered questions" to the number of "Created questions")
+
+Future versions of the app may allow users to create their own profile and add user authentication and use a database for storage, but this wasn't a requirement for this project and hasn't been implemented yet.
 
 ## Instructions to run:
+
+You can try out this app at [https://udacity-would-you-rather-stevehan.netlify.app/](https://udacity-would-you-rather-stevehan.netlify.app/)
+
+If you like to run the app locally on your machine, first install [Node.js](https://nodejs.org/en/) if you don't already have it installed.  Once Node is installed you can install the app by running:
+
 ```
 git clone https://github.com/stevehanphoto/udacity-reactnd-project-would-you-rather.git
 ```
-cd in to udacity-reactnd-project-would-you-rather project folder
-
-run the commands:
+cd in to the *udacity-reactnd-project-would-you-rather* project folder and run the commands:
 ```
 npm install
+
 npm start
 ```
 Go to http://localhost:3000 on your browser
@@ -35,7 +56,7 @@ Go to http://localhost:3000 on your browser
     │   ├── PollQuestion.js # Polls the user to select their answer to the question
     │   ├── ViewPollResults.js - # View of results of the question
     │   ├── LeaderBoard.js # List the total score, based on total questions answered & number of questions created, of users.
-    │   ├── Page404.js # TODO - Shows 404 message
+    │   ├── Page404.js # Shows 404 page not found message
     ├── actions
     │   ├── authedUser.js
     │   ├── questions.js
@@ -53,132 +74,14 @@ Go to http://localhost:3000 on your browser
     │   ├── _DATA.js # A JavaScript API to communicate with Udacity backend.
     │   ├── api.js        
     ├── img # Images for the app.
-    │   ├── SanSan.jpg # Image of San San, an early childhood development student
-    │   ├── ScarlettLash.jpg # Image of Scarlett Lash, a well known tattoo andfashion model
-    │   ├── MissyM.jpg # Image of Missy M, an artist currently making a name in the mural painting scene
-    │   └── CharlestonPierce.jpg # Image of Charleston Pierce, a model, actor, fashion show producer and model coach 
+    │   ├── SanSan.jpg # Image of San San
+    │   ├── ScarlettLash.jpg # Image of Scarlett Lash
+    │   ├── MissyM.jpg # Image of Missy M
+    │   └── CharlestonPierce.jpg # Image of Charleston Pierce 
     ├── index.css # Global styles.
     └── index.js # Used for DOM rendering only.
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Would You Rather Project
-
-This is the starter code for the final assessment project for Udacity's React & Redux course.
-
-The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
-
-Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
-
-## Data
-
-There are two types of objects stored in our database:
-
-* Users
-* Questions
-
-### Users
-
-Users include:
-
-| Attribute    | Type             | Description           |
-|-----------------|------------------|-------------------         |
-| id                 | String           | The user’s unique identifier |
-| name          | String           | The user’s first name  and last name     |
-| avatarURL  | String           | The path to the image file |
-| questions | Array | A list of ids of the polling questions this user created|
-| answers      | Object         |  The object's keys are the ids of each question this user answered. The value of each key is the answer the user selected. It can be either `'optionOne'` or `'optionTwo'` since each question has two options.
-
-### Questions
-
-Questions include:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| id                  | String | The question’s unique identifier |
-| author        | String | The author’s unique identifier |
-| timestamp | String | The time when the question was created|
-| optionOne | Object | The first voting option|
-| optionTwo | Object | The second voting option|
-
-### Voting Options
-
-Voting options are attached to questions. They include:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| votes             | Array | A list that contains the id of each user who voted for that option|
-| text                | String | The text of the option |
-
-Your code will talk to the database via 4 methods:
-
-* `_getUsers()`
-* `_getQuestions()`
-* `_saveQuestion(question)`
-* `_saveQuestionAnswer(object)`
-
-1) `_getUsers()` Method
-
-*Description*: Get all of the existing users from the database.  
-*Return Value*: Object where the key is the user’s id and the value is the user object.
-
-2) `_getQuestions()` Method
-
-*Description*: Get all of the existing questions from the database.  
-*Return Value*: Object where the key is the question’s id and the value is the question object.
-
-3) `_saveQuestion(question)` Method
-
-*Description*: Save the polling question in the database.  
-*Parameters*:  Object that includes the following properties: `author`, `optionOneText`, and `optionTwoText`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| author | String | The id of the user who posted the question|
-| optionOneText| String | The text of the first option |
-| optionTwoText | String | The text of the second option |
-
-*Return Value*:  An object that has the following properties: `id`, `author`, `optionOne`, `optionTwo`, `timestamp`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| id | String | The id of the question that was posted|
-| author | String | The id of the user who posted the question|
-| optionOne | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
-| optionTwo | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
-|timestamp|String | The time when the question was created|
-
-4) `_saveQuestionAnswer(object)` Method
-
-*Description*: Save the answer to a particular polling question in the database.
-*Parameters*: Object that contains the following properties: `authedUser`, `qid`, and `answer`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| authedUser | String | The id of the user who answered the question|
-| qid | String | The id of the question that was answered|
-| answer | String | The option the user selected. The value should be either `"optionOne"` or `"optionTwo"`|
-
-## Contributing
-
-This repository is the starter code for *all* Udacity students. Therefore, we most likely will not accept pull requests. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md).
+## Resources
+- [Project Starter Template](https://github.com/udacity/reactnd-project-would-you-rather-starter)
+- [Project Rubric](https://review.udacity.com/#!/rubrics/1567/view)
